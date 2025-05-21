@@ -19,12 +19,12 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     # 清洗 Hours 字段：去掉“总时数”
     df['Hours'] = df['Hours'].str.replace(r'总时数', '', regex=False).str.strip()
     
-    # ✅ 只保留包含中文的评论
+    # 只保留包含中文的评论
     df = df[df['Content'].str.contains(r'[\u4e00-\u9fa5]', regex=True)]
     
     return df
 
-df = pd.read_csv("data/raw/steam_reviews.csv")
+df = pd.read_csv("../../data/raw/steam_reviews.csv")
 df = clean(df)
-df.to_csv('data/clean/steam_reviews_cleaned.csv', index=False, encoding='utf-8-sig')
+df.to_csv('../../data/clean/steam_reviews.csv', index=False, encoding='utf-8-sig')
 print("清洗完成，已保存为 steam_reviews_cleaned.csv")

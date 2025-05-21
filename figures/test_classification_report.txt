@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+         不推荐       0.78      0.79      0.79       242
+          推荐       0.77      0.77      0.77       228
+
+    accuracy                           0.78       470
+   macro avg       0.78      0.78      0.78       470
+weighted avg       0.78      0.78      0.78       470
